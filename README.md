@@ -1,4 +1,4 @@
-content = """# AIP444NSB: AI for Programmers - Courseworks
+## AIP444NSB: AI for Programmers - Courseworks
 
 Welcome to my repository for the **AIP444NSB: AI for Programmers** course. This repository contains a collection of assignments, projects, and lab exercises completed during the semester, focusing on the application of Artificial Intelligence and Machine Learning techniques in software development.
 
