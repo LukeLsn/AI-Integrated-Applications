@@ -1,0 +1,17 @@
+{
+  "name": "lab-01",
+  "version": "1.0.0",
+  "description": "For all course labs and assignments, you will put your code in a **private GitHub repo** (i.e., use the same repo for all labs and assignments). This is often referred to as a [monorepo](https://monorepo.tools/): a single repo that contains many separate projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "openai": "^6.37.0"
+  }
+}
