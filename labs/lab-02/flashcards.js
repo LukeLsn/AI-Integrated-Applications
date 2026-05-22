@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-
+// to run, go to the folder containing this file then:
+// node --env-file=../../.env flashcards.js notes.md --cards 3
 import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
 import OpenAI from 'openai';
