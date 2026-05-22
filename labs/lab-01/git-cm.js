@@ -96,7 +96,7 @@ async function main() {
         console.log(`🤖 Consulting LLM (${is_creative ? "CREATIVE" : "NORMAL"} mode)...`);
         
         const response = await openai.chat.completions.create({
-            model: "meta-llama/llama-3.2-3b-instruct:free",
+            model: "nvidia/nemotron-3-super-120b-a12b:free",
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: stagedDiff }
@@ -124,5 +124,8 @@ async function main() {
         process.exit(1);
     }
 }
+
+
+// I have added something here. Spot me!
 
 main();
