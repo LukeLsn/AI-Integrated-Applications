@@ -245,6 +245,9 @@
 
     // Run directory parsing execution pipeline on page ready status
     loadWorkspaceFiles();
+
+    // This webpage only works on md files that has a good enough content that the AI model can work on. Apparently if you used the md files that has the edge cases here like no content and minimal content, this will just not work
+    // I might need to fix this somewhere along the road. Good to note though!
   </script>
 </body>
 </html>
