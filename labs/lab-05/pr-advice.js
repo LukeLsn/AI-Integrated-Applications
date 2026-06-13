@@ -35,6 +35,7 @@ function parseArguments() {
 }
 
 function validateApiKey() {
+    const apiKey = process.env.OPENROUTER_API_KEY;
     if (!apiKey || apiKey.trim() === "") {
         console.error("❌ Error: OPENROUTER_API_KEY environment parameter missing.");
         process.exit(1);
