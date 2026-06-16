@@ -1,6 +1,6 @@
-import { ChatCompletionTool } from 'openai/resources/chat/completions';
+import { OpenAI } from 'openai';
 
-export const tools: ChatCompletionTool[] = [
+export const tools: OpenAI.ChatCompletionTool[] = [
   {
     type: 'function',
     function: {
@@ -29,4 +29,4 @@ export const tools: ChatCompletionTool[] = [
       }
     }
   }
-]; 
+];
