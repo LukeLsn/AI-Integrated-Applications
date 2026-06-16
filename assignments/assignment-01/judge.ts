@@ -53,13 +53,14 @@ You are a Lead Developer.
 1. De-duplicate findings and remove false positives.
 2. YOU MUST OUTPUT YOUR FINDINGS INTO THE EXACT HTML TEMPLATE PROVIDED BELOW.
 3. Do not change the CSS classes or the overall structure.
-4. Only output the final HTML.
+4. IF there are no findings when generating the html, you must display that there are no findings and the content is good. While STILL using the template
+5. Only output the final HTML.
 TEMPLATE:
 ${template}
 `;
 
   const completion = await client.chat.completions.create({
-    model: 'nvidia/nemotron-3-ultra-550b-a55b:free',
+    model: 'nex-agi/nex-n2-pro:free',
     messages: [
       { role: 'system', content: systemPrompt },
       { role: 'user', content: `Template: ${template}\n\nFindings: ${JSON.stringify(combinedFindings)}` }

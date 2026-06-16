@@ -51,4 +51,4 @@ function main() {
 
 main();
 
-// This is a test to check git mode
+/ This is a test to check git mode comment - added

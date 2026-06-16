@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Report</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; background: #f8f9fa; padding: 24px; }
+        .container { max-width: 960px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+        header { background: #1a1a2e; color: white; padding: 24px 32px; }
+        .stat { text-align: center; padding: 16px; background: #fff; border: 1px solid #eee; border-radius: 6px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px 32px; text-align: left; border-bottom: 1px solid #eee; }
+        .badge { padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+        .badge-warn { background: #fff3cd; color: #856404; }
+        .badge-info { background: #d1ecf1; color: #0c5460; }
+        .footer { padding: 24px 32px; font-size: 0.8rem; color: #666; background: #fafafa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><h1>Code Review Report</h1></header>
+        <table>
+            <thead><tr><th>Line</th><th>Severity</th><th>Category</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td><code>provided_code.ts:19</code><br><code>./bad_code.ts:27</code></td>
+                    <td><span class="badge badge-warn">critical</span></td>
+                    <td>security</td>
+                    <td>SQL query strings are built by concatenating user-controlled <code>u.id</code> directly into SQL. Use parameterized queries or prepared statements.</td>
+                </tr>
+                <tr>
+                    <td><code>provided_code.ts:27</code><br><code>./bad_code.ts:23</code></td>
+                    <td><span class="badge badge-warn">critical</span></td>
+                    <td>security</td>
+                    <td>Secret key material is hard-coded in source code and encoded with base64. Base64 is not encryption; store secrets in environment variables or a dedicated secret manager.</td>
+                </tr>
+                <tr>
+                    <td><code>provided_code.ts:33</code><br><code>./bad_code.ts:1</code></td>
+                    <td><span class="badge badge-warn">critical</span></td>
+                    <td>reliability</td>
+                    <td><code>fs</code> is used without being imported, which will cause a runtime <code>ReferenceError</code>. Add the appropriate import or require statement.</td>
+                </tr>
+                <tr>
+                    <td><code>provided_code.ts:1</code><br><code>./bad_code.ts:18</code></td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>design</td>
+                    <td><code>processData</code> declares a <code>number</code> return type but returns a string via <code>toString()</code>. Correct the return type or return value to avoid runtime type errors.</td>
+                </tr>
+                <tr>
+                    <td><code>provided_code.ts:5</code><br><code>./bad_code.ts:6</code></td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>design</td>
+                    <td><code>User.meta</code> is typed as <code>any</code>, reducing TypeScript type safety. Define a specific interface for metadata fields.</td>
+                </tr>
+                <tr>
+                    <td><code>./bad_code.ts:12</code></td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>design</td>
+                    <td><code>processData</code> accepts an <code>any</code> parameter, losing useful type information. Type the parameter explicitly.</td>
+                </tr>
+                <tr>
+                    <td><code>./bad_code.ts:29</code></td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>design</td>
+                    <td>Using <code>global.DB_CONN</code> for database access is an anti-pattern. Prefer dependency injection or explicit connection management.</td>
+                </tr>
+                <tr>
+                    <td><code>provided_code.ts:27</code><br><code>./bad_code.ts:35</code></td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>security</td>
+                    <td>Sensitive secret material is logged to the console, even partially. Remove secret logging from application code.</td>
+                </tr>
+                <tr>
+                    <td><code>./bad_code.ts:42</code></td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>performance</td>
+                    <td><code>writeFileSync</code> is called inside a <code>setTimeout</code> callback, so the write remains blocking. Use asynchronous file APIs and handle errors.</td>
+                </tr>
+                <tr>
+                    <td><code>./bad_code.ts:11</code></td>
+                    <td><span class="badge badge-info">info</span></td>
+                    <td>style</td>
+                    <td><code>processData</code> is unnecessarily complex: it creates an object, extracts a key, and indexes it again. Simplify to a direct return where possible.</td>
+                </tr>
+                <tr>
+                    <td><code>./bad_code.ts:39</code></td>
+                    <td><span class="badge badge-info">info</span></td>
+                    <td>style</td>
+                    <td>String concatenation style is inconsistent. Prefer a single consistent approach, such as template literals.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="footer">Generated by Lead Developer Review Synthesis</div>
+    </div>
+</body>
+</html>

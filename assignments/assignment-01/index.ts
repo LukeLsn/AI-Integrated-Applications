@@ -2,8 +2,8 @@ import path from 'path';
 import dotenv from 'dotenv';
 dotenv.config({ path: path.join(process.cwd(), './.env') });
 
-import { callReviewer } from './reviewer.ts';
-import { judge } from './judge.ts';
+import { callReviewer } from './reviewer';
+import { judge } from './judge';
 import fs from 'fs';
 import { execSync } from 'child_process';
 
