@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Report - sample_test.ts</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 2rem; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+        header { background: #1a1a2e; color: white; padding: 2rem; }
+        h1 { font-size: 1.75rem; font-weight: 600; }
+        .meta { opacity: 0.8; margin-top: 0.5rem; font-size: 0.9rem; }
+        .summary { display: flex; gap: 1rem; padding: 1.5rem 2rem; border-bottom: 1px solid #eee; flex-wrap: wrap; }
+        .badge { padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        .badge-critical { background: #fee2e2; color: #991b1b; }
+        .badge-warn { background: #fef3c7; color: #92400e; }
+        .badge-info { background: #dbeafe; color: #1e40af; }
+        .badge-security { background: #fce7f3; color: #9d174d; }
+        .badge-style { background: #e0e7ff; color: #3730a3; }
+        .badge-design { background: #d1fae5; color: #065f46; }
+        .findings { padding: 0 2rem 2rem; }
+        .finding { border: 1px solid #e5e7eb; border-radius: 6px; margin-top: 1rem; overflow: hidden; }
+        .finding-header { display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #fafafa; border-bottom: 1px solid #e5e7eb; flex-wrap: wrap; }
+        .finding-line { font-family: 'Monaco', 'Menlo', monospace; font-size: 0.85rem; background: #e5e7eb; padding: 0.15rem 0.5rem; border-radius: 4px; }
+        .finding-body { padding: 1rem; }
+        .finding-desc { color: #374151; }
+        .category-tag { font-size: 0.7rem; font-weight: 600; padding: 0.1rem 0.4rem; border-radius: 3px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Code Review Report</h1>
+            <div class="meta">sample_test.ts • 6 findings (after de-duplication)</div>
+        </header>
+        
+        <div class="summary">
+            <span class="badge badge-critical">2 Critical</span>
+            <span class="badge badge-warn">3 Warn</span>
+            <span class="badge badge-info">1 Info</span>
+            <span class="badge badge-security">Security: 2</span>
+            <span class="badge badge-style">Style: 1</span>
+            <span class="badge badge-design">Design: 3</span>
+        </div>
+        
+        <div class="findings">
+            <article class="finding">
+                <header class="finding-header">
+                    <span class="badge badge-critical">Critical</span>
+                    <span class="badge badge-security">Security</span>
+                    <span class="finding-line">Line 3</span>
+                </header>
+                <div class="finding-body">
+                    <p class="finding-desc"><strong>Hardcoded API key/secret in source code.</strong> This exposes sensitive credentials if code is committed to version control or shared. Secrets should be stored in environment variables or secure vaults, not committed to version control.</p>
+                </div>
+            </article>
+            
+            <article class="finding">
+                <header class="finding-header">
+                    <span class="badge badge-warn">Warn</span>
+                    <span class="badge badge-design">Design</span>
+                    <span class="finding-line">Line 5</span>
+                </header>
+                <div class="finding-body">
+                    <p class="finding-desc"><strong>Function parameter uses <code>any[]</code> type, losing type safety.</strong> Use a specific interface or generic type instead.</p>
+                </div>
+            </article>
+            
+            <article class="finding">
+                <header class="finding-header">
+                    <span class="badge badge-warn">Warn</span>
+                    <span class="badge badge-style">Style</span>
+                    <span class="finding-line">Line 7</span>
+                </header>
+                <div class="finding-body">
+                    <p class="finding-desc"><strong>Redundant nested condition: <code>data_input_array.length &gt; 0</code> checked twice unnecessarily.</strong> Remove duplicate check.</p>
+                </div>
+            </article>
+            
+            <article class="finding">
+                <header class="finding-header">
+                    <span class="badge badge-info">Info</span>
+                    <span class="badge badge-design">Design</span>
+                    <span class="finding-line">Line 7</span>
+                </header>
+                <div class="finding-body">
+                    <p class="finding-desc"><strong>Parameter name <code>data_input_array</code> is verbose and redundant.</strong> Prefer concise names like <code>items</code> or <code>data</code>.</p>
+                </div>
+            </article>
+            
+            <article class="finding">
+                <header class="finding-header">
+                    <span class="badge badge-critical">Critical</span>
+                    <span class="badge badge-security">Security</span>
+                    <span class="finding-line">Line 14</span>
+                </header>
+                <div class="finding-body">
+                    <p class="finding-desc"><strong>SQL injection vulnerability: user-controlled input (<code>data_input_array[0]</code>) directly concatenated into SQL query string without parameterization or sanitization.</strong> Use parameterized queries or prepared statements.</p>
+                </div>
+            </article>
+            
+            <article class="finding">
+                <header class="finding-header">
+                    <span class="badge badge-warn">Warn</span>
+                    <span class="badge badge-design">Design</span>
+                    <span class="finding-line">Line 14</span>
+                </header>
+                <div class="finding-body">
+                    <p class="finding-desc"><strong>Function accesses <code>data_input_array[0]</code> without checking if array is empty.</strong> Will throw on empty input. Add guard clause or handle empty case.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
