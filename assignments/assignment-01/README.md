@@ -309,3 +309,7 @@ Screenshot your terminal running the tool against **staged git changes** (Git Mo
 | **Prompt Engineering**  | 20%    | Personas are distinct and effective, using good prompt engineering. JSON output is done correctly. The "Judge" produces clean Markdown.              |
 | **Golden Dataset**      | 10%    | The tool successfully catches the expected errors in `bad_code` (Secrets, Variable Names, Imports/Types, etc).                                       |
 
+## HOW TO RUN:
+- just use how it is said in the requirement: (e.g. node review.js, node review.js --debug, node review.js --debug --file .\bad_code.ts)
+- make sure your personal .env file is in the same directory as review.js
+- run it in this folder. Thanks!
