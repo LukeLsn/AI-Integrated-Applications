@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Report</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; background: #f8f9fa; padding: 24px; }
+        .container { max-width: 960px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+        header { background: #1a1a2e; color: white; padding: 24px 32px; }
+        .stat { text-align: center; padding: 16px; background: #fff; border: 1px solid #eee; border-radius: 6px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px 32px; text-align: left; border-bottom: 1px solid #eee; }
+        .badge { padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+        .badge-warn { background: #fff3cd; color: #856404; }
+        .badge-info { background: #d1ecf1; color: #0c5460; }
+        .footer { padding: 24px 32px; font-size: 0.8rem; color: #666; background: #fafafa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><h1>Code Review Report</h1></header>
+        <table>
+            <thead><tr><th>Line</th><th>Severity</th><th>Category</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td>provided_code.ts:15 / index.ts:17</td>
+                    <td><span class="badge badge-warn">critical</span></td>
+                    <td>Security</td>
+                    <td>SQL injection risk: user-controlled <code>user.id</code> is concatenated directly into a SQL query. Use parameterized queries or prepared statements.</td>
+                </tr>
+                <tr>
+                    <td>provided_code.ts:22 / index.ts:3</td>
+                    <td><span class="badge badge-warn">critical</span></td>
+                    <td>Security</td>
+                    <td>Hard-coded secret key is encoded with base64, which is not encryption. Move secrets to a secure environment variable or secret manager.</td>
+                </tr>
+                <tr>
+                    <td>provided_code.ts:27 / index.ts:20</td>
+                    <td><span class="badge badge-warn">critical</span></td>
+                    <td>Design</td>
+                    <td><code>fs</code> is used without being imported, which will cause a runtime <code>ReferenceError</code>. Import the module explicitly.</td>
+                </tr>
+                <tr>
+                    <td>provided_code.ts:9 / index.ts:10</td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>Design</td>
+                    <td><code>processData</code> accepts <code>any</code>, disabling type safety. Use a specific type or <code>unknown</code> with validation.</td>
+                </tr>
+                <tr>
+                    <td>index.ts:5</td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>Design</td>
+                    <td>The <code>User.meta</code> property is typed as <code>any</code>. Define a specific metadata type or use a safer union type.</td>
+                </tr>
+                <tr>
+                    <td>provided_code.ts:12 / index.ts:10</td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>Design</td>
+                    <td><code>processData</code> declares a <code>number</code> return type but returns <code>result.toString()</code>. Correct the signature or return a number.</td>
+                </tr>
+                <tr>
+                    <td>provided_code.ts:22 / index.ts:33</td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>Security</td>
+                    <td>Partial secret key is logged to console output. Remove the log or ensure sensitive material is never exposed in logs.</td>
+                </tr>
+                <tr>
+                    <td>index.ts:1</td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>Style</td>
+                    <td>Unused import <code>exec</code> from <code>child_process</code>. Remove it if it is not needed.</td>
+                </tr>
+                <tr>
+                    <td>index.ts:27</td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>Design</td>
+                    <td><code>setTimeout</code> wraps a synchronous file write, creating misleading async behavior. Use asynchronous I/O or remove the wrapper.</td>
+                </tr>
+                <tr>
+                    <td>index.ts:38</td>
+                    <td><span class="badge badge-warn">warn</span></td>
+                    <td>Design</td>
+                    <td><code>main</code> contains inline test data and is not exported, limiting reusability. Separate test fixtures or export the function if needed.</td>
+                </tr>
+                <tr>
+                    <td>index.ts:39</td>
+                    <td><span class="badge badge-info">info</span></td>
+                    <td>Performance</td>
+                    <td>Trailing debug-style comment appears to be an artifact and should be removed.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="footer">Generated by Lead Developer Review Synthesis</div>
+    </div>
+</body>
+</html>

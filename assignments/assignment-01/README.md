@@ -308,3 +308,4 @@ Screenshot your terminal running the tool against **staged git changes** (Git Mo
 | **Modes & Inputs**      | 15%    | Tool correctly handles Git Mode (`diff --staged`), File Mode (`--file`), and Debug Mode (`--debug`).                                                 |
 | **Prompt Engineering**  | 20%    | Personas are distinct and effective, using good prompt engineering. JSON output is done correctly. The "Judge" produces clean Markdown.              |
 | **Golden Dataset**      | 10%    | The tool successfully catches the expected errors in `bad_code` (Secrets, Variable Names, Imports/Types, etc).                                       |
+
