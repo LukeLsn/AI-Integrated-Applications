@@ -144,3 +144,5 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+/labs/lab-07/node
+/labs/lab-07/chroma_db
