@@ -1,0 +1,903 @@
+This HTML delivers a standalone, professional job-fit report for the "Intermediate Front End Developer" role at 2iSolutions Inc. It combines legitimacy warnings, a numerical fit score, and tailored advice for resume, cover letter, and interview prep.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Fit Report — Intermediate Front End Developer @ 2iSolutions Inc.</title>
+    <style>
+        /* ── Reset & Base ── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f4f6fb;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* ── Container ── */
+        .report {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04);
+            padding: 2.5rem 2.8rem;
+            transition: padding 0.2s;
+        }
+        @media (max-width: 700px) {
+            .report {
+                padding: 1.6rem 1.2rem;
+                border-radius: 1.2rem;
+            }
+            body {
+                padding: 1rem 0.6rem;
+            }
+        }
+        /* ── Typography ── */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.2rem;
+            color: #0f172a;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e9edf4;
+            padding-bottom: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+        .subhead .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
+        }
+        .subhead .meta span {
+            background: #f1f5f9;
+            padding: 0.2rem 0.9rem;
+            border-radius: 100px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #334155;
+        }
+        h2 {
+            font-size: 1.45rem;
+            margin-top: 2.6rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #0f172a;
+        }
+        h2 .badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.15rem 0.8rem;
+            border-radius: 100px;
+            background: #e2e8f0;
+            color: #334155;
+            letter-spacing: 0.01em;
+        }
+        h3 {
+            font-size: 1.1rem;
+            margin: 1.4rem 0 0.5rem;
+            color: #1e293b;
+        }
+        h4 {
+            font-size: 0.95rem;
+            margin: 1rem 0 0.25rem;
+            color: #334155;
+        }
+        p,
+        li {
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* ── Warning Banner ── */
+        .warning-banner {
+            background: #fef2f2;
+            border-left: 6px solid #dc2626;
+            border-radius: 1.2rem;
+            padding: 1.4rem 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.08);
+        }
+        .warning-banner .icon {
+            font-size: 2rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        .warning-banner .content {
+            flex: 1;
+            min-width: 200px;
+        }
+        .warning-banner .content h3 {
+            margin: 0 0 0.25rem;
+            font-size: 1.15rem;
+            color: #b91c1c;
+        }
+        .warning-banner .content p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: #7f1d1d;
+        }
+        .warning-banner .content .confidence {
+            display: inline-block;
+            background: #fee2e2;
+            padding: 0.2rem 1rem;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #b91c1c;
+            margin-top: 0.5rem;
+        }
+        .warning-banner.yellow {
+            background: #fffbeb;
+            border-left-color: #eab308;
+        }
+        .warning-banner.yellow .content h3 {
+            color: #a16207;
+        }
+        .warning-banner.yellow .content p {
+            color: #713f12;
+        }
+        .warning-banner.yellow .content .confidence {
+            background: #fef3c7;
+            color: #a16207;
+        }
+        /* ── Signal Tags ── */
+        .signal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin: 0.8rem 0 0.2rem;
+        }
+        .signal-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
+            background: #f8fafc;
+            border-radius: 0.8rem;
+        }
+        .signal-item .flag {
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0.1rem 0.6rem;
+            border-radius: 40px;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .flag-red {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        .flag-yellow {
+            background: #fef3c7;
+            color: #a16207;
+        }
+        .flag-green {
+            background: #dcfce7;
+            color: #15803d;
+        }
+        .signal-item .sig-text {
+            flex: 1;
+        }
+        .signal-item .sig-text strong {
+            font-weight: 600;
+        }
+        .signal-item .sig-evidence {
+            display: block;
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.15rem;
+            font-style: italic;
+        }
+        /* ── Verdict Box ── */
+        .verdict-box {
+            background: #f1f5f9;
+            border-radius: 1rem;
+            padding: 1rem 1.4rem;
+            margin: 1rem 0 0.2rem;
+            font-size: 0.92rem;
+            border-left: 4px solid #94a3b8;
+        }
+        .verdict-box strong {
+            font-weight: 600;
+        }
+        /* ── Cards / Grids ── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 0.8rem 0 0.2rem;
+        }
+        @media (max-width: 640px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: #f8fafc;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #e9edf4;
+        }
+        .card h4 {
+            margin-top: 0;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            color: #0f172a;
+        }
+        .card ul,
+        .card ol {
+            padding-left: 1.4rem;
+            margin: 0.2rem 0;
+        }
+        .card li {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+        .card .chip {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 0.15rem 0.7rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin: 0.15rem 0.2rem;
+            color: #1e293b;
+        }
+        .chip.matched {
+            background: #dcfce7;
+            color: #15803d;
+        }
+        .chip.missing {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        .chip.partial {
+            background: #fef3c7;
+            color: #a16207;
+        }
+        /* ── Fit Score ── */
+        .fit-score-ring {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+            margin: 0.5rem 0 1rem;
+        }
+        .ring {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+        }
+        .ring svg {
+            transform: rotate(-90deg);
+            width: 120px;
+            height: 120px;
+        }
+        .ring .bg {
+            fill: none;
+            stroke: #e9edf4;
+            stroke-width: 8;
+        }
+        .ring .fg {
+            fill: none;
+            stroke: #3b82f6;
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dasharray 0.8s ease;
+        }
+        .ring .center-label {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .ring .center-label small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #64748b;
+            margin-left: 0.1rem;
+        }
+        .fit-details {
+            flex: 1;
+            min-width: 160px;
+        }
+        .fit-details .big-note {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.3rem;
+        }
+        .fit-details p {
+            font-size: 0.92rem;
+            color: #475569;
+        }
+        .skill-breakdown {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.2rem;
+            margin: 0.6rem 0 0.2rem;
+        }
+        .skill-breakdown .sb-item {
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .skill-breakdown .sb-item .count {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .skill-breakdown .sb-item .label {
+            color: #475569;
+        }
+        .skill-breakdown .sb-item .count.match {
+            color: #15803d;
+        }
+        .skill-breakdown .sb-item .count.partial {
+            color: #a16207;
+        }
+        .skill-breakdown .sb-item .count.miss {
+            color: #b91c1c;
+        }
+        /* ── Lists inline ── */
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.6rem;
+            margin: 0.3rem 0 0.6rem;
+        }
+        .tag-list .tag {
+            background: #f1f5f9;
+            padding: 0.15rem 0.9rem;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+        .tag-list .tag.match {
+            background: #dcfce7;
+            border-color: #bbf7d0;
+            color: #15803d;
+        }
+        .tag-list .tag.missing {
+            background: #fee2e2;
+            border-color: #fecaca;
+            color: #b91c1c;
+        }
+        /* ── Adaptation / Guidance blocks ── */
+        .guidance-block {
+            background: #f8fafc;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            margin: 0.8rem 0;
+            border: 1px solid #e9edf4;
+        }
+        .guidance-block h4 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+        .guidance-block ul,
+        .guidance-block ol {
+            padding-left: 1.4rem;
+            margin: 0.3rem 0;
+        }
+        .guidance-block li {
+            margin-bottom: 0.35rem;
+            font-size: 0.92rem;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 0.6rem 0;
+        }
+        @media (max-width: 640px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        .gap-item {
+            background: #fff;
+            border-radius: 0.8rem;
+            padding: 0.8rem 1rem;
+            border: 1px solid #e9edf4;
+            margin-bottom: 0.6rem;
+        }
+        .gap-item .gap-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .gap-item .gap-title .level {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.1rem 0.7rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .level-critical {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        .level-high {
+            background: #fef3c7;
+            color: #a16207;
+        }
+        .level-medium {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        .gap-item .gap-advice {
+            font-size: 0.88rem;
+            color: #475569;
+            margin-top: 0.3rem;
+        }
+        /* ── Interview Prep ── */
+        .interview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin: 0.6rem 0;
+        }
+        @media (max-width: 700px) {
+            .interview-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .interview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .int-card {
+            background: #f8fafc;
+            border-radius: 1rem;
+            padding: 1rem 1.2rem;
+            border: 1px solid #e9edf4;
+        }
+        .int-card h4 {
+            margin-top: 0;
+            font-size: 0.95rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .int-card ul {
+            padding-left: 1.2rem;
+            margin: 0.2rem 0;
+        }
+        .int-card li {
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+        /* ── Utility ── */
+        .mt-1 {
+            margin-top: 0.6rem;
+        }
+        .mb-1 {
+            margin-bottom: 0.6rem;
+        }
+        .text-muted {
+            color: #64748b;
+            font-size: 0.88rem;
+        }
+        .hr {
+            border: none;
+            border-top: 1px solid #e9edf4;
+            margin: 1.8rem 0 0.6rem;
+        }
+        .print-only {
+            display: none;
+        }
+        /* ── Smooth micro-interactions ── */
+        .card,
+        .guidance-block,
+        .int-card,
+        .gap-item,
+        .signal-item,
+        .warning-banner {
+            transition: box-shadow 0.2s ease, transform 0.15s ease;
+        }
+        .card:hover,
+        .guidance-block:hover,
+        .int-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+        /* ── Print ── */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0.2in;
+            }
+            .report {
+                box-shadow: none;
+                padding: 0;
+            }
+            .warning-banner {
+                break-inside: avoid;
+            }
+            .card-grid,
+            .two-col,
+            .interview-grid {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="report">
+
+        <!-- ─── HEADER ─── -->
+        <h1>Job Fit Report</h1>
+        <div class="subhead">
+            <div class="meta">
+                <span>Intermediate Front End Developer</span>
+                <span>2iSolutions Inc.</span>
+                <span>Toronto, ON</span>
+            </div>
+            <div class="meta">
+                <span>Posted 1 day ago</span>
+                <span>Report generated · just now</span>
+            </div>
+        </div>
+
+        <!-- ─── 1. LEGITIMACY ASSESSMENT ─── -->
+        <h2>
+            ⚖️ Legitimacy Assessment
+            <span class="badge">Confidence 40%</span>
+        </h2>
+
+        <!-- Warning banner (RED + YELLOW signals → verdict is high-risk) -->
+        <div class="warning-banner">
+            <div class="icon">⚠️</div>
+            <div class="content">
+                <h3>High Risk — Proceed with Caution</h3>
+                <p>This job posting shows multiple red flags and is <strong>likely illegitimate or a copy-paste</strong> from another source. The domain absence is critical. Do not share personal information until verified through official channels.</p>
+                <span class="confidence">Confidence: 40% · Verdict: LIKELY ILLEGITIMATE</span>
+            </div>
+        </div>
+
+        <div class="verdict-box">
+            <strong>Recommendation:</strong> Proceed with caution — high risk of scam or misrepresentation. Verify by contacting 2iSolutions via their known phone number or verified LinkedIn page before engaging further.
+        </div>
+
+        <div class="signal-list">
+            <div class="signal-item">
+                <span class="flag flag-red">● Red</span>
+                <div class="sig-text">
+                    <strong>Company domain does not exist</strong>
+                    <span class="sig-evidence">WHOIS lookup for 2isolutionsinc.com returns 'No match' — domain is not registered or expired.</span>
+                </div>
+            </div>
+            <div class="signal-item">
+                <span class="flag flag-red">● Red</span>
+                <div class="sig-text">
+                    <strong>Major role–company mismatch</strong>
+                    <span class="sig-evidence">Posting requires React, Next.js, Jamstack, Azure, gov/banking experience; company core business is SAP consulting and ERP solutions — no front-end web development practice found.</span>
+                </div>
+            </div>
+            <div class="signal-item">
+                <span class="flag flag-yellow">● Yellow</span>
+                <div class="sig-text">
+                    <strong>No salary range provided</strong>
+                    <span class="sig-evidence">Common in legitimate postings, but combined with other red flags it reduces transparency.</span>
+                </div>
+            </div>
+            <div class="signal-item">
+                <span class="flag flag-yellow">● Yellow</span>
+                <div class="sig-text">
+                    <strong>New posting with no employer research</strong>
+                    <span class="sig-evidence">Posting age is 1 day; no company background or research included in the job description — may be hastily created.</span>
+                </div>
+            </div>
+            <div class="signal-item">
+                <span class="flag flag-green">● Green</span>
+                <div class="sig-text">
+                    <strong>Company appears to be a real entity</strong>
+                    <span class="sig-evidence">2iSolutions Inc. is an SAP Gold Partner with 51–200 employees, $8.1M revenue, and 56k+ LinkedIn followers (though possibly inflated).</span>
+                </div>
+            </div>
+            <div class="signal-item">
+                <span class="flag flag-yellow">● Yellow</span>
+                <div class="sig-text">
+                    <strong>No front-end leadership visible</strong>
+                    <span class="sig-evidence">Leadership includes SAP, cloud, recruiting roles — no front-end development leads, suggesting the role may be a third-party repost or generic template.</span>
+                </div>
+            </div>
+            <div class="signal-item">
+                <span class="flag flag-yellow">● Yellow</span>
+                <div class="sig-text">
+                    <strong>Domain confusion</strong>
+                    <span class="sig-evidence">Company website is '2isolutionsus.com' rather than '2isolutionsinc.com' — possible brand inconsistency.</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="hr">
+
+        <!-- ─── 2. FIT ASSESSMENT ─── -->
+        <h2>
+            🎯 Fit Assessment
+            <span class="badge">Encouraged to apply</span>
+        </h2>
+
+        <div class="fit-score-ring">
+            <div class="ring">
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="52" />
+                    <circle class="fg" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="245" />
+                </svg>
+                <div class="center-label">25<small>%</small></div>
+            </div>
+            <div class="fit-details">
+                <div class="big-note">You have a foundation — now build the missing layers.</div>
+                <p>Your programming fundamentals (JavaScript, SQL, OOP) and systems-level mindset are valuable, but <strong>5 of 6 required skills</strong> are not yet demonstrated. With focused upskilling (React, Next.js, Azure, Figma, Agile) you can become a strong candidate. The role is worth pursuing if you're ready to invest in targeted learning.</p>
+                <div class="skill-breakdown">
+                    <span class="sb-item"><span class="count match">1</span> <span class="label">matched</span></span>
+                    <span class="sb-item"><span class="count partial">1</span> <span class="label">partial</span></span>
+                    <span class="sb-item"><span class="count miss">4</span> <span class="label">missing</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h4>✅ Matched &amp; Partially Matched</h4>
+                <ul>
+                    <li><strong>JavaScript</strong> — core language for front-end; you have it</li>
+                    <li><strong>Databases (SQL, Oracle/MySQL)</strong> — relevant for full-stack context</li>
+                    <li><strong>Programming fundamentals</strong> (C++, Java, C#) — transferable OOP &amp; logic</li>
+                    <li><strong>PowerShell / scripting</strong> — automation mindset, useful for DevOps</li>
+                    <li><strong>Ticket resolution &amp; documentation</strong> — maps to Agile workflow &amp; incident response</li>
+                </ul>
+                <div class="tag-list">
+                    <span class="tag match">JavaScript</span>
+                    <span class="tag match">SQL</span>
+                    <span class="tag partial">OOP</span>
+                    <span class="tag partial">Scripting</span>
+                    <span class="tag partial">Documentation</span>
+                </div>
+            </div>
+            <div class="card">
+                <h4>❌ Missing (Critical Gaps)</h4>
+                <ul>
+                    <li><strong>React / Next.js / Jamstack</strong> — not present in resume</li>
+                    <li><strong>Large-scale gov/banking apps</strong> — no relevant experience</li>
+                    <li><strong>Azure cloud platform</strong> — no cloud experience shown</li>
+                    <li><strong>Figma or design tooling</strong> — not mentioned</li>
+                    <li><strong>Agile / DevOps practices</strong> — no evidence of Scrum, CI/CD, or team workflows</li>
+                </ul>
+                <div class="tag-list">
+                    <span class="tag missing">React</span>
+                    <span class="tag missing">Next.js</span>
+                    <span class="tag missing">Jamstack</span>
+                    <span class="tag missing">Azure</span>
+                    <span class="tag missing">Figma</span>
+                    <span class="tag missing">Agile</span>
+                    <span class="tag missing">DevOps</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="hr">
+
+        <!-- ─── 3. RESUME ADAPTATION ─── -->
+        <h2>
+            📝 Resume Adaptation
+            <span class="badge">Reframe &amp; reprioritize</span>
+        </h2>
+
+        <div class="guidance-block">
+            <h4>Reframe your experience toward front-end &amp; full-stack</h4>
+            <ul>
+                <li><strong>Lead with your programming diploma &amp; JavaScript:</strong> Move "Computer Programming (Advanced Diploma)" to the top of education and list JavaScript, SQL, and OOP languages prominently in a "Technical Skills" section.</li>
+                <li><strong>Translate IT support into dev-adjacent strengths:</strong> "Resolved complex root-cause system issues" → <em>“Applied systematic debugging and root-cause analysis to resolve production-level issues across OS environments.”</em></li>
+                <li><strong>Repackage documentation &amp; SOP creation:</strong> "Knowledge base creation" → <em>“Authored technical documentation and runbooks supporting team workflows and incident response — directly transferable to Agile sprint documentation.”</em></li>
+                <li><strong>Highlight cross-platform OS expertise:</strong> Windows, macOS, Linux → <em>“Cross-platform environment expertise relevant to Electron/Tauri desktop app development and device management.”</em></li>
+                <li><strong>Showcase automation &amp; scripting:</strong> "PowerShell" → <em>“Developed automation scripts for system configuration and data workflows, demonstrating DevOps-adjacent skills.”</em></li>
+                <li><strong>Add a "Projects" section immediately:</strong> Build 2–3 portfolio projects (see gap analysis) and list them with live links, GitHub repos, and a one-line description of tech used.</li>
+                <li><strong>Remove or de-emphasize</strong> hardware repair details unless they demonstrate problem-solving (keep 1–2 bullet points max).</li>
+            </ul>
+        </div>
+
+        <div class="two-col">
+            <div class="card">
+                <h4>🎯 Suggested Resume Structure</h4>
+                <ol>
+                    <li><strong>Contact + GitHub / Portfolio</strong> (add links)</li>
+                    <li><strong>Technical Skills:</strong> JavaScript, SQL, React (learning), Node.js (learning), Git, PowerShell, Windows/macOS/Linux</li>
+                    <li><strong>Projects</strong> (new) — 2–3 front-end or full-stack apps</li>
+                    <li><strong>Education:</strong> Computer Programming (Advanced Diploma) — Seneca, expected 2026</li>
+                    <li><strong>Experience:</strong> condensed IT support bullets with reframed language</li>
+                    <li><strong>Certifications / Courses</strong> — add any front-end certificates</li>
+                </ol>
+            </div>
+            <div class="card">
+                <h4>💡 Key Reframing Examples</h4>
+                <ul>
+                    <li><em>“High-volume ticket resolution”</em> → <strong>“Prioritized and triaged 50+ weekly tickets, demonstrating Agile-style workflow management under pressure.”</strong></li>
+                    <li><em>“BIOS/firmware optimization”</em> → <strong>“System-level performance tuning and debugging — analogous to front-end performance optimization (Core Web Vitals).”</strong></li>
+                    <li><em>“Data sanitization / privacy compliance”</em> → <strong>“Implemented data security protocols and compliance practices (PIPEDA/GDPR) — valuable for fintech, healthtech, govtech.”</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="hr">
+
+        <!-- ─── 4. COVER LETTER GUIDANCE ─── -->
+        <h2>
+            ✉️ Cover Letter Guidance
+            <span class="badge">Angle your narrative</span>
+        </h2>
+
+        <div class="guidance-block">
+            <h4>Key points to weave into your letter</h4>
+            <ul>
+                <li><strong>Open with enthusiasm for the role</strong> and acknowledge the shift from IT support to front-end development — frame it as a deliberate, skills-backed transition.</li>
+                <li><strong>Highlight your programming foundation:</strong> “I bring a solid base in JavaScript, SQL, and OOP languages (C++, Java, C#), and I am actively deepening my expertise in React, Next.js, and the Jamstack ecosystem.”</li>
+                <li><strong>Address the gap head-on:</strong> “While my recent experience is in technical support, I have spent the last [X months] building modern web projects and completing structured front-end training.” (Be specific if you have.)</li>
+                <li><strong>Leverage your unique value:</strong> “My systems-level debugging, cross-platform OS knowledge, and security-compliance mindset allow me to build more robust, performant, and secure web applications.”</li>
+                <li><strong>Show you understand the industry:</strong> Mention government/banking contexts — “I am eager to apply my analytical rigor and documentation discipline to large-scale applications that demand reliability and clarity.”</li>
+                <li><strong>Close with a call to action:</strong> “I would welcome the chance to discuss how my technical foundation and rapid upskilling trajectory align with the needs of your team.”</li>
+            </ul>
+        </div>
+
+        <div class="two-col">
+            <div class="card">
+                <h4>📌 Angles to Emphasize</h4>
+                <ul>
+                    <li>Systems thinking → full-stack debugging</li>
+                    <li>Security &amp; compliance → fintech / govtech value</li>
+                    <li>Documentation &amp; SOPs → Agile team readiness</li>
+                    <li>Customer-facing support → stakeholder communication</li>
+                    <li>PowerShell automation → DevOps curiosity</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>⚠️ Gaps to Address in the Letter</h4>
+                <ul>
+                    <li><strong>No React/Next.js experience</strong> — mention current learning journey and a project you're building</li>
+                    <li><strong>No Azure cloud</strong> — note you're studying cloud fundamentals (Azure Fundamentals AZ-900 or similar)</li>
+                    <li><strong>No Agile/DevOps evidence</strong> — reference any open-source contributions or collaborative projects</li>
+                    <li><strong>No Figma</strong> — express willingness to learn design tools and collaborate with designers</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="hr">
+
+        <!-- ─── 5. INTERVIEW PREP ─── -->
+        <h2>
+            🎤 Interview Prep
+            <span class="badge">Be ready to pivot</span>
+        </h2>
+
+        <div class="interview-grid">
+            <div class="int-card">
+                <h4>🔍 Likely Questions</h4>
+                <ul>
+                    <li>“Why are you transitioning from IT support to front-end development?”</li>
+                    <li>“What experience do you have with React and Next.js?”</li>
+                    <li>“How would you build a component that fetches and displays data from an API?”</li>
+                    <li>“Explain the difference between SPAs, SSR, and SSG.”</li>
+                    <li>“What is your approach to responsive design and accessibility?”</li>
+                    <li>“Describe a time you debugged a complex issue — walk us through your process.”</li>
+                </ul>
+            </div>
+            <div class="int-card">
+                <h4>📚 Topics to Review</h4>
+                <ul>
+                    <li><strong>React fundamentals:</strong> components, props, state, hooks, effect cleanup</li>
+                    <li><strong>Next.js:</strong> pages, routing, data fetching (getStaticProps, getServerSideProps)</li>
+                    <li><strong>Jamstack:</strong> static generation, CDN deployment, headless CMS</li>
+                    <li><strong>Azure basics:</strong> App Services, Static Web Apps, Azure Functions</li>
+                    <li><strong>Agile &amp; DevOps:</strong> Scrum ceremonies, CI/CD pipelines, GitHub Actions</li>
+                    <li><strong>Figma:</strong> navigating design files, inspecting elements, basic collaboration</li>
+                </ul>
+            </div>
+            <div class="int-card">
+                <h4>🏢 Company Talking Points</h4>
+                <ul>
+                    <li>2iSolutions is an <strong>SAP Gold Partner</strong> — but this role is outside their core ERP business, so ask how front-end fits into their service line.</li>
+                    <li>They serve government and banking clients — <strong>probe for security and compliance expectations</strong> (your privacy compliance knowledge is a plus).</li>
+                    <li>Mention their <strong>NMSDC certification</strong> (if relevant) and ask about diversity &amp; inclusion in tech teams.</li>
+                    <li>Ask about <strong>team structure:</strong> “Who does the front-end team report to? Is this a new role or backfill?”</li>
+                    <li>Inquire about <strong>tech stack evolution:</strong> “What’s the roadmap for your front-end architecture over the next 12 months?”</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="guidance-block" style="margin-top:0.4rem;">
+            <h4>💡 Strategic Advice for the Interview</h4>
+            <ul>
+                <li><strong>Acknowledge the gap with a growth mindset:</strong> “I know I don’t have direct commercial experience with React yet, but I’ve built [X project] and I’m working through [Y course]. I learn fast and I’m deeply committed to front-end.”</li>
+                <li><strong>Use your IT support stories for behavioral questions</strong> — they demonstrate patience, user empathy, and systematic thinking.</li>
+                <li><strong>Bring a portfolio project to show</strong> — even a simple React app with API integration proves initiative.</li>
+                <li><strong>Ask about mentorship and ramp-up:</strong> “What does the first 30/60/90 days look like for a new front-end hire?”</li>
+                <li><strong>Be prepared to discuss the legitimacy concerns</strong> — if something feels off, trust your gut. You can politely ask for a video call with a real team member.</li>
+            </ul>
+        </div>
+
+        <hr class="hr">
+
+        <!-- ─── FOOTER ─── -->
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-top:1.6rem;font-size:0.78rem;color:#94a3b8;">
+            <span>Built from resume + job posting + gap analysis</span>
+            <span>Report for <strong>Intermediate Front End Developer @ 2iSolutions Inc.</strong></span>
+        </div>
+
+    </div>
+</body>
+</html>
+```
+### Report Structure
+
+The report is structured to guide you from initial skepticism to actionable next steps. Here's how each section works:
+
+- **Legitimacy Assessment**: A bold warning banner immediately signals the high-risk verdict. Below it, a detailed breakdown of red, yellow, and green flags (with evidence) helps you understand the reasoning behind the 40% confidence score.
+- **Fit Assessment**: A circular fitness gauge shows a 25% match. The adjacent breakdown lists matched, partial, and missing skills, while the "Encouraged to apply" badge reinforces that the role is worth pursuing with targeted upskilling.
+- **Resume Adaptation**: Concrete reframing examples show how to translate IT support bullet points into developer-friendly language. A suggested resume structure and key reframing examples provide a clear before/after roadmap.
+- **Cover Letter Guidance**: Specific angles to emphasize (e.g., systems thinking, security compliance) and gaps to address (e.g., no React experience) are listed side-by-side, making it easy to craft a narrative that acknowledges limitations while highlighting transferable strengths.
+- **Interview Prep**: Three columns organize likely questions, topics to review (React, Next.js, Azure, Agile), and company talking points (e.g., SAP Gold Partner context). A strategic advice block offers tips for addressing experience gaps and assessing team fit.
+
+---
+
+**Optimization Tip:** You can replace the placeholder project names and course references in the "Cover Letter Guidance" and "Interview Prep" sections with your actual learning progress or portfolio examples.

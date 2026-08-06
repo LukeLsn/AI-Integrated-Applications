@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Fit Report – Interactive Sports Technologies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f4f6fa;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.02);
+            padding: 32px 28px;
+            margin-bottom: 28px;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.07);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eef2f6;
+            padding-bottom: 14px;
+        }
+
+        .card-header h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #0f172a;
+        }
+
+        .card-header .icon {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        /* ---------- LEGITIMACY BANNER ---------- */
+        .banner-red {
+            background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+            color: white;
+            padding: 20px 24px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            border-left: 8px solid #7f1d1d;
+            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.2);
+        }
+
+        .banner-red .banner-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 8px;
+        }
+
+        .banner-red .banner-title span {
+            background: rgba(255,255,255,0.2);
+            border-radius: 40px;
+            padding: 0 14px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .banner-red p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+            max-width: 900px;
+        }
+
+        .signal-list {
+            margin-top: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .signal-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: rgba(255,255,255,0.08);
+            padding: 12px 16px;
+            border-radius: 12px;
+            backdrop-filter: blur(2px);
+        }
+
+        .signal-flag {
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 2px 12px;
+            border-radius: 30px;
+            white-space: nowrap;
+            background: rgba(255,255,255,0.25);
+            color: white;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .signal-flag.red { background: #450a0a; }
+        .signal-flag.neutral { background: #57534e; }
+        .signal-flag.green { background: #166534; }
+
+        .signal-text {
+            font-size: 0.95rem;
+        }
+        .signal-text strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+        .signal-text .evidence {
+            font-size: 0.88rem;
+            opacity: 0.85;
+        }
+
+        .score-badge {
+            display: inline-block;
+            background: rgba(0,0,0,0.15);
+            border-radius: 40px;
+            padding: 2px 16px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .recommendation-box {
+            margin-top: 20px;
+            background: rgba(0,0,0,0.12);
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        /* ---------- FIT ASSESSMENT ---------- */
+        .fit-score-ring {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .score-circle {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: conic-gradient(#22c55e 0deg 180deg, #e2e8f0 180deg 360deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 6px white, 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .score-circle .inner {
+            background: white;
+            border-radius: 50%;
+            width: 88px;
+            height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .fit-details {
+            flex: 1;
+        }
+
+        .fit-details p {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .skill-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .skill-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .skill-bar-label {
+            min-width: 120px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        .skill-bar-track {
+            flex: 1;
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 30px;
+        }
+
+        .fill-matched { background: #22c55e; }
+        .fill-missing { background: #ef4444; }
+
+        .skill-count {
+            font-size: 0.85rem;
+            font-weight: 600;
+            min-width: 100px;
+            text-align: right;
+            color: #475569;
+        }
+
+        .match-encourage {
+            background: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 14px 20px;
+            border-radius: 12px;
+            margin-top: 18px;
+            font-weight: 500;
+            color: #166534;
+        }
+
+        /* ---------- SUGGESTIONS / BULLETS ---------- */
+        .suggestion-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 4px;
+        }
+
+        .suggestion-item {
+            background: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 14px;
+            border-left: 5px solid #3b82f6;
+            transition: background 0.15s;
+        }
+
+        .suggestion-item strong {
+            color: #0f172a;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+
+        .suggestion-item p {
+            color: #334155;
+            font-size: 0.95rem;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .card {
+                padding: 24px 18px;
+            }
+            .fit-score-ring {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .score-circle {
+                width: 90px;
+                height: 90px;
+            }
+            .score-circle .inner {
+                width: 72px;
+                height: 72px;
+                font-size: 1.8rem;
+            }
+            .banner-red .banner-title {
+                font-size: 1.2rem;
+                flex-wrap: wrap;
+            }
+            .signal-item {
+                flex-wrap: wrap;
+            }
+            .skill-bar-label {
+                min-width: 90px;
+                font-size: 0.8rem;
+            }
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 20px 0;
+        }
+
+        .chip {
+            display: inline-block;
+            background: #eef2f6;
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+
+        .chip-green {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .chip-red {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .gap-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            margin-top: 8px;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 32px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 24px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ===== SECTION 1: LEGITIMACY ASSESSMENT ===== -->
+    <div class="card" id="legitimacy">
+        <div class="card-header">
+            <span class="icon">🛡️</span>
+            <h2>Legitimacy Assessment</h2>
+            <span class="score-badge" style="margin-left:auto; background:#450a0a; color:white;">Confidence: 23%</span>
+        </div>
+
+        <!-- RED BANNER -->
+        <div class="banner-red">
+            <div class="banner-title">
+                ⚠️ HIGH RISK — Do Not Engage
+                <span>RED FLAG</span>
+            </div>
+            <p>The posting contains multiple critical red flags: duplicated fields, unregistered domain, no verifiable company presence, and garbled research content. The absence of any credible corporate footprint strongly suggests this is either a fake listing or a company that does not exist as described.</p>
+            
+            <div class="signal-list">
+                <div class="signal-item">
+                    <span class="signal-flag red">RED</span>
+                    <div class="signal-text">
+                        <strong>Duplicated content across skills, preferred skills, and responsibilities</strong>
+                        <div class="evidence">Required skills, preferred skills, and key responsibilities fields are exact duplicates across all three sections. Strong indicator of template stuffing or automated generation.</div>
+                    </div>
+                </div>
+                <div class="signal-item">
+                    <span class="signal-flag red">RED</span>
+                    <div class="signal-text">
+                        <strong>Company domain name not actively registered or resolvable</strong>
+                        <div class="evidence">'Interactive Sports Technologies' does not appear in business registries. WHOIS lookup returned generic legal disclaimer — no registered domain or company details.</div>
+                    </div>
+                </div>
+                <div class="signal-item">
+                    <span class="signal-flag red">RED</span>
+                    <div class="signal-text">
+                        <strong>Address does not correspond to a known business</strong>
+                        <div class="evidence">498 Markland Street, Markham, ON does not match any commercial listing for this company. No LinkedIn, Better Business Bureau, or Glassdoor presence.</div>
+                    </div>
+                </div>
+                <div class="signal-item">
+                    <span class="signal-flag red">RED</span>
+                    <div class="signal-text">
+                        <strong>Fabricated or corrupted research content</strong>
+                        <div class="evidence">Glassdoor content is garbled, repetitive, appears to be a copy-paste error from an unrelated article mixed with a Reddit rant. No credible employee reviews found.</div>
+                    </div>
+                </div>
+                <div class="signal-item">
+                    <span class="signal-flag neutral">NEUTRAL</span>
+                    <div class="signal-text">
+                        <strong>Salary range appears plausible but does not corroborate legitimacy</strong>
+                        <div class="evidence">$22.50–$25.00/hr, 37.5+ hrs is reasonable for entry-level technician, but insufficient to override other red flags.</div>
+                    </div>
+                </div>
+                <div class="signal-item">
+                    <span class="signal-flag green">GREEN</span>
+                    <div class="signal-text">
+                        <strong>Job description duties are standard for the role</strong>
+                        <div class="evidence">Install, test, maintain equipment, use ohmmeters — generic but typical. No demand for sensitive data or upfront payment.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendation-box">
+                🚫 <strong>Recommendation:</strong> Do not apply — high risk of fraudulent or misleading posting.
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 2: FIT ASSESSMENT ===== -->
+    <div class="card" id="fit">
+        <div class="card-header">
+            <span class="icon">📊</span>
+            <h2>Fit Assessment</h2>
+        </div>
+
+        <div class="fit-score-ring">
+            <div class="score-circle">
+                <div class="inner">72%</div>
+            </div>
+            <div class="fit-details">
+                <p style="font-weight:600; font-size:1.2rem;">Strong foundational alignment — you should apply (if legitimate)</p>
+                <p style="color:#475569;">Your technical troubleshooting, OS expertise, and customer service background map well to the core installer/technician duties.</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between;">
+            <div style="flex:1; min-width:200px;">
+                <h3 style="font-weight:600; margin-bottom:10px; font-size:1.1rem;">✅ Matched Skills (6 of 6 required)</h3>
+                <div class="skill-bars">
+                    <div class="skill-bar-row">
+                        <span class="skill-bar-label">Electrical testing tools</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill fill-matched" style="width:100%"></div></div>
+                        <span class="skill-count">Strong match</span>
+                    </div>
+                    <div class="skill-bar-row">
+                        <span class="skill-bar-label">Schematics & manuals</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill fill-matched" style="width:90%"></div></div>
+                        <span class="skill-count">Technical manual exp.</span>
+                    </div>
+                    <div class="skill-bar-row">
+                        <span class="skill-bar-label">Problem-solving (E/M)</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill fill-matched" style="width:95%"></div></div>
+                        <span class="skill-count">Systems diagnostics</span>
+                    </div>
+                    <div class="skill-bar-row">
+                        <span class="skill-bar-label">Work independently/team</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill fill-matched" style="width:85%"></div></div>
+                        <span class="skill-count">Team collaboration</span>
+                    </div>
+                    <div class="skill-bar-row">
+                        <span class="skill-bar-label">Physical dexterity</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill fill-matched" style="width:70%"></div></div>
+                        <span class="skill-count">Component-level repair</span>
+                    </div>
+                    <div class="skill-bar-row">
+                        <span class="skill-bar-label">Communication & docs</span>
+                        <div class="skill-bar-track"><div class="skill-bar-fill fill-matched" style="width:90%"></div></div>
+                        <span class="skill-count">Customer service, docs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="flex:1; min-width:180px;">
+                <h3 style="font-weight:600; margin-bottom:10px; font-size:1.1rem;">⚠️ Missing / Light</h3>
+                <div class="gap-list">
+                    <span class="chip chip-red">Ohmmeter-specific use</span>
+                    <span class="chip chip-red">Climbing/ladder exp.</span>
+                    <span class="chip chip-red">Confined spaces</span>
+                    <span class="chip chip-red">Industry-specific equip.</span>

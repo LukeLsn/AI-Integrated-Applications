@@ -1,0 +1,58 @@
+{
+  "strengths": [
+    "Hardware expertise aligns well with technical roles requiring physical system knowledge (BIOS/firmware, component repair, system teardowns)",
+    "Multi-OS proficiency (Windows/macOS/Linux) and networking basics transfer to infrastructure-focused positions",
+    "Strong customer-facing and ticket management experience (high-volume resolution, first-contact focus, SOP creation)",
+    "Security-adjacent skills (malware removal, patching, data sanitization, privacy compliance) relevant to regulated industries",
+    "Active education in Computer Programming (Advanced Diploma, finishing Aug 2026) shows upskilling commitment",
+    "Geographic alignment with Toronto/Markham/Scarborough market \u2013 4 of 10 postings are local (Pala Interactive, Accuenergy, Teranet, 2iSolutions, Interactive Sports)"
+  ],
+  "gaps": [
+    {
+      "gap": "No modern web development stack (React, Vue, Angular, Next.js, TypeScript, Node.js)",
+      "level": "Critical for 8/10 roles",
+      "actionable_advice": "Build 2-3 portfolio projects: a React/Next.js frontend consuming a REST API (Node/Express or C#), deployed on Vercel/Azure. Prioritize TypeScript.\nResearch Context: - Best Resources to Learn Frontend Development in 2026 | Blog: ## Framework resources\n\nDo not learn React, Angular, and Vue at the same time. Pick based on the roles, teams, or projects you are target"
+    },
+    {
+      "gap": "No version control (Git/GitHub) or CI/CD experience",
+      "level": "Required by 7/10 roles",
+      "actionable_advice": "Immediately start using Git for all coursework/personal projects. Create GitHub profile with consistent commits. Learn GitHub Actions basics.\nResearch Context: - Git Learning Roadmap: From Beginner to Expert (2026) | Coursera: This roadmap is for anyone interested in building skills that support collaborative work, whether you\u2019re exploring new roles, looking"
+    },
+    {
+      "gap": "No cloud/platform exposure (AWS, Azure, Vercel, Supabase, Docker)",
+      "level": "Required by 6/10 roles",
+      "actionable_advice": "Deploy a project to Vercel (free) and Azure Static Web Apps (student credit). Add Dockerfile. Mention in resume.\nResearch Context: - Software Engineer Resume: 35+ Examples & Guide [2026]: Use a reverse chronological format to create your software developer resume, as it allows you to list the most recent experience first.\n Hiring"
+    },
+    {
+      "gap": "Database skills limited to SQL syntax; no ORM, migration, or schema design experience",
+      "level": "Required by 5/10 roles",
+      "actionable_advice": "Learn Prisma or Entity Framework Core. Practice migrations, seeding, relationship modeling in a project.\nResearch Context: - 14 SQL Developer Resume Examples for 2026 | Resume Worded: Employers want to know how well you know SQL. Show your SQL proficiency level by including details like:\n\n Advanced knowledge of SQL syntax"
+    },
+    {
+      "gap": "No API design/integration experience (REST, GraphQL, third-party APIs)",
+      "level": "Required by 6/10 roles",
+      "actionable_advice": "Build a project integrating 2-3 public APIs (e.g., Stripe, Google Maps, a CRM mock). Document with Swagger/OpenAPI.\nResearch Context: - How to Design APIs Like a Senior Engineer (REST, GraphQL, Auth, Security): and inconsistent patterns that make the APIs hard to use and maintain. We'll start by learning about the architectural prin"
+    },
+    {
+      "gap": "Frontend fundamentals missing (HTML/CSS, responsive design, webpack/Vite, accessibility, SEO)",
+      "level": "Required by 7/10 roles",
+      "actionable_advice": "Complete a responsive layout challenge (Figma to code). Learn semantic HTML, CSS Grid/Flexbox, Vite, basic a11y audit.\nResearch Context: - 11 Front End Developer Resume Examples for 2026 | Resume Worded: Experience listed on the frontend developer resume should be focused on how to create designs and transform them into appealing, inte"
+    },
+    {
+      "gap": "Experience level mismatch: resume shows ~1.5 years hardware/support; most dev roles want 2-5+ years full-stack",
+      "level": "Structural",
+      "actionable_advice": "Target Junior/Associate Developer, Technical Support Engineer (SaaS), or QA Automation entry points. Frame hardware troubleshooting as 'debugging complex systems under SLA'.\nResearch Context: - Full-Stack Developer Resume Template and Writing Guide (2026) | CareerBldr: This guide will help you strike the right balance between breadth and depth, with concrete examples and templates for ever"
+    },
+    {
+      "gap": "No certifications or public portfolio (GitHub, live sites)",
+      "level": "High visibility",
+      "actionable_advice": "Publish 3 projects to GitHub Pages/Vercel. Add README with architecture diagram, setup, test instructions. Consider AWS Cloud Practitioner or Azure Fundamentals (student discounts).\nResearch Context: - Using GitHub as a Portfolio When Applying for Jobs \u00b7 community \u00b7 Discussion #169760 \u00b7 GitHub: clean commit history, and meaningful commit messages  \ud83c\udfaf Show variety \u2013 personal projects, open-source co"
+    }
+  ],
+  "unique_value": [
+    "Rare blend of physical hardware diagnostics + scripting (PowerShell, SQL, Java/C#) \u2013 valuable for IoT, embedded, or hardware-adjacent software roles",
+    "Proven ability to document, create knowledge bases, and streamline SOPs \u2013 directly transfers to developer documentation and process improvement",
+    "Data sanitization/privacy compliance experience \u2013 niche asset for fintech, healthtech, govtech (Teranet, Blue Pearl, 2iSolutions)",
+    "Local to Toronto/Markham with on-site hardware role at Bluum (Markham) \u2013 can interview in-person immediately for Accuenergy (Scarborough), Interactive Sports (Markham), Teranet/Pala/2iSolutions (Toronto)"
+  ]
+}

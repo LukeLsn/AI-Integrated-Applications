@@ -1,0 +1,64 @@
+{
+  "hard_skills": [
+    "Windows",
+    "macOS",
+    "Linux",
+    "network infrastructure concepts",
+    "system configuration",
+    "BIOS/firmware optimization",
+    "component-level repair",
+    "hardware compatibility verification",
+    "system teardowns",
+    "PowerShell",
+    "SQL (Oracle/MySQL)",
+    "JavaScript",
+    "C++",
+    "Java",
+    "C#",
+    "technical manual interpretation",
+    "data sanitization",
+    "privacy compliance",
+    "high-volume ticket resolution",
+    "malware removal",
+    "security patching",
+    "network/software updates",
+    "knowledge base creation",
+    "asset logging systems"
+  ],
+  "soft_skills": [
+    "customer-centric technical support",
+    "exceptional customer service",
+    "proactive system maintenance",
+    "optimizing data workflows",
+    "resolving complex root-cause system issues",
+    "streamlining standard operating procedures",
+    "managing high-volume ticket environments",
+    "delivering exceptional customer service",
+    "maximizing first-contact resolution rates"
+  ],
+  "work_experience": [
+    "Computer Repair Technician | ICT Workshop, Scarborough, ON | 2023",
+    "Hardware Support Technician (Formerly Parts Coordinator) | Bluum, 75 Clegg Rd. Markham, ON | November 2023 \u2013 November 2024"
+  ],
+  "education": [
+    "Computer Programming (Advanced Diploma) | Seneca Polytechnic, Toronto, ON | Enrolled (Finishing August 2026)",
+    "Computer Repair and Maintenance (Certificate) | Centennial College, Toronto, ON | Graduated August 2023"
+  ],
+  "certifications": [],
+  "projects": [],
+  "keywords_domain_expertise": [
+    "Computer Programming",
+    "hardware lifecycle management",
+    "systems diagnostics",
+    "operating system troubleshooting",
+    "networking",
+    "component-level hardware issues",
+    "ticket management",
+    "data workflow optimization",
+    "technical inventory management",
+    "data security protocols",
+    "physical data sanitization",
+    "asset logging",
+    "knowledge base management"
+  ]
+}
