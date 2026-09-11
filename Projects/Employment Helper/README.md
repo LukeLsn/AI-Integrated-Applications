@@ -1,4 +1,4 @@
-# Job Search AI Assistant (Assignment 02)
+# Job Search AI Assistant
 
 An end-to-end AI application built with Python that ingests job postings and resumes, extracts structured data using LLMs, conducts web and WHOIS research, and produces strategic market, gap, and application advisories.
 
