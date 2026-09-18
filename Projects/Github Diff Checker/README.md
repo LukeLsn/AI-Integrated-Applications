@@ -44,7 +44,7 @@ An automated, multi-agent CLI tool designed to perform comprehensive, multi-pers
                                v
                    +-----------------------+
                    |  Lead Developer AI    |
-                   |       (Judge)         |
+                   |   (Judge / judge.ts)  |
                    +-----------+-----------+
                                |
                                v
@@ -81,7 +81,14 @@ An automated, multi-agent CLI tool designed to perform comprehensive, multi-pers
    npm install
    ```
 
-3. **Configure Environment Variables**:
+3. **Build TypeScript files**:
+   ```bash
+   npm run build
+   # or
+   npx tsc
+   ```
+
+4. **Configure Environment Variables**:
    Create a `.env` file in the root of the project directory and add your OpenRouter API key:
    ```env
    OPENROUTER_API_KEY=your_openrouter_api_key_here
@@ -117,14 +124,14 @@ node review.js --debug --file ./bad_code.ts
 Specify a custom destination path for the generated HTML report.
 
 ```bash
-node review.js --file ./bad_code.ts --output ./reports/audit-results.html
+node review.js --file ./bad_code.ts --output ./sample\ outputs/audit-results.html
 ```
 
 ---
 
 ## Integrated Tools (Function Calling)
 
-The AI reviewers are provided with function schemas and real-time execution handlers for two core context-gathering tools:
+The AI reviewers are provided with function schemas and real-time execution handlers implemented in `tools.ts`:
 
 * **`read_file(file_path, [start_line], [end_line])`**: Reads content from disk to inspect surrounding code context (e.g., imports, full function definitions, interface specs). Implemented with strict token safety limits for large files.
 * **`ripgrep(search_pattern)`**: Executes recursive codebase searches to verify function calls, locate usage patterns, or identify duplicate implementations across the repo.
@@ -150,9 +157,15 @@ node review.js --debug --file bad_code.ts
 
 ```
 .
-├── review.js           # Main CLI Entrypoint & Multi-Agent Orchestrator
+├── sample outputs/     # Output folder for generated HTML review reports
 ├── bad_code.ts         # Test suite file containing intentional bugs/secrets
-├── .env                # Local environment variables (API Keys)
-├── package.json        # Node.js dependencies and scripts
-└── README.md           # Documentation
+├── index.ts            # CLI entry point and setup orchestration
+├── judge.ts            # Lead Developer AI agent synthesis & HTML output logic
+├── reviewer.ts         # Specialist AI Reviewer agent routines (parallel calls)
+├── tools.ts            # Implementation of read_file and ripgrep functions
+├── review.js           # Compiled JavaScript runner for the CLI tool
+├── tsconfig.json       # TypeScript compiler configuration
+├── package.json        # Project metadata, dependencies, and scripts
+├── package-lock.json   # Dependency lockfile
+└── README.md           # Repository documentation
 ```
